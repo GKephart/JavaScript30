@@ -104,13 +104,13 @@
 
 
 
-			const table = document.querySelector(".table-responsive")
+			const table = document.querySelector(".table-responsive");
 			const tBody = table.querySelector("tbody");
-			const applicants = tBody.querySelectorAll(".ListText")
-			const arrayApplicants = [ ...applicants]
-			const applicantNames = arrayApplicants.map(applicant => applicant.childNodes)
-			const applicantNamesArray = [ ...applicantNames]
-			const  filteredApplicantEmails = applicantNamesArray.filter(applicant => applicant.length === 9)
+			const applicants = tBody.querySelectorAll(".ListText");
+			const arrayApplicants = [ ...applicants];
+			const applicantNames = arrayApplicants.map(applicant => applicant.childNodes);
+			const applicantNamesArray = [ ...applicantNames];
+			const  filteredApplicantEmails = applicantNamesArray.filter(applicant => applicant.length === 9);
 			const stringifedApplicantEmails = filteredApplicantEmails.reduce((stringfiedEmails, applicant) => {
 				if (stringfiedEmails === undefined) {
 					stringfiedEmails = '';
@@ -118,5 +118,10 @@
 				console.log(applicant);
 				return  stringfiedEmails + `${applicant[8].data.replace(/\s/g,'')},`;}, '')
 		</script>
+
+
 	</body>
 </html>
+
+
+
