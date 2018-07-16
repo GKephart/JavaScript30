@@ -11,6 +11,8 @@
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const team = players;
+   // console.log(players, team);
 
     // and we want to make a copy of it.
 
@@ -37,10 +39,30 @@
     // The same thing goes for objects, let's say we have a person object
 
     // with Objects
-    const person = {
-      name: 'Wes Bos',
-      age: 80
-    };
+
+	 const wes = {
+		 name: 'Wes',
+		 age: 100,
+		 social: {
+			 twitter: {
+			 	personal: "wes bos",
+             work: "web bos"
+          },
+			 facebook: 'wesbos.developer',
+		 }
+	 };
+
+	 console.profile("spread");
+	 const spreadTime = {...wes};
+	 console.profileEnd;
+
+    console.time("rich man");
+	 const dev = Object.assign({}, wes);
+	 console.timeEnd("rich man");
+
+    console.time("poor man");
+	 const dev2 = JSON.parse(JSON.stringify(wes));
+	 console.timeEnd("poor man");
 
     // and think we make a copy:
 
